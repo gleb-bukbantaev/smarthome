@@ -13,6 +13,6 @@ class LightFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_humidity, container, false)
+        return inflater.inflate(R.layout.fragment_light, container, false)
     }
 }

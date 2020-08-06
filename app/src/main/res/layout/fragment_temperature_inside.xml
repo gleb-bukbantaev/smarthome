@@ -5,26 +5,23 @@
     android:orientation="vertical"
     android:gravity="center">
 
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:gravity="center"
-        android:text="Light">
+        android:text="Temperature  inside">
 
 
     </TextView>
-
-
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:text="%"/>
-
+        android:text="C*"/>
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"/>
-
 </LinearLayout>
