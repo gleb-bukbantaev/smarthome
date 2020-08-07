@@ -19,10 +19,38 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_gravity="center"
-        android:text="C*"/>
+        android:text="C*" />
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center" />
+    <ToggleButton
+       
+        android:id="@+id/toggleButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/s1"
+        android:checked="false"
+        android:text="ToggleButton"
+        android:textOff="off"
+        android:textOn="on"/>
+
+   
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ToggleButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center" 
+            android:layout_weight="1"/>
+
+        <ToggleButton
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:checked="true" />
+    </LinearLayout>
+
+
 </LinearLayout>
