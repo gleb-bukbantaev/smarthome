@@ -21,8 +21,6 @@
         android:layout_height="200dp"
         android:layout_gravity="center"
         android:text="C*"/>
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"/>
+
+
 </LinearLayout>
