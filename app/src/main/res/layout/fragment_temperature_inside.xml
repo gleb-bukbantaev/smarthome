@@ -21,8 +21,17 @@
         android:layout_gravity="center"
         android:text="C*"/>
 
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center" />
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/s1"
+        android:text="ToggleButton"
+        android:textOff="off"
+        android:textOn="on"
+
+        />
+
+    />
 </LinearLayout>
