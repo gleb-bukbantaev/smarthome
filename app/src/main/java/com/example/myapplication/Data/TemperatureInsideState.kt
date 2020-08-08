@@ -7,6 +7,4 @@ class TemperatureInsideState (
     val top : Int,
     val low : Int,
     val value : Int
-) {
-
-}
+)
