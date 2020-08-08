@@ -14,17 +14,24 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:text="Light">
 
 
     </TextView>
 
-    <Button
-        android:id="@+id/light_main"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:text="%"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/light_main"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:text="%"/>
 
     <ToggleButton
         android:id="@+id/lightOnOff"
@@ -36,6 +43,10 @@
         android:textOff="off"
         android:textOn="on"
 
-        />
+            />
+    </LinearLayout>
+
+
+
 </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
