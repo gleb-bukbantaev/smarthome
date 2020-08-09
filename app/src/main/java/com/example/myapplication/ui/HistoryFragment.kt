@@ -18,7 +18,7 @@ class HistoryFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_history, container, false)
-        val graph = findViewById (R.id.layout)
+        val graph = view.findViewById<GraphView>(R.id.layout)
         val graphSeries  = LineGraphSeries(arrayOf(
             DataPoint(2.0, 4.0),
             DataPoint(3.0, 12.0),
@@ -27,7 +27,6 @@ class HistoryFragment:Fragment() {
             DataPoint(6.0, 19.0)
         ))
         graph.addSeries(graphSeries)
-
 
         return view
     }
