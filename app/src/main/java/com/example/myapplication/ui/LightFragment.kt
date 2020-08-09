@@ -28,7 +28,6 @@ class LightFragment : Fragment() {
         }
         return view
 }
-
     var lamp: Boolean = false
     var minLevel: Int = 0
     var maxLevel: Int = 0
@@ -46,6 +45,9 @@ class LightFragment : Fragment() {
         }
 
     }
+
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         update()
