@@ -51,7 +51,7 @@ class LightFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         update()
-        lightOnOff.setOnClickListener {
+        light_on_off.setOnClickListener {
           try {
               lifecycleScope.launch {
                   WebClient.setLightState(
