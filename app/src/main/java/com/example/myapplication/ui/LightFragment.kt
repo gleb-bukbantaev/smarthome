@@ -1,6 +1,7 @@
 package com.example.myapplication.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,15 +54,21 @@ class LightFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         update()
         on_off.setOnClickListener {
+            Log.v("CHECK_LISTENER", "begin")
             try {
                 lifecycleScope.launch {
+                    Log.v("CHECK_LISTENER", "begin2")
                     WebClient.setLightState(
                         LightState(!light, minLevel, maxLevel, 0)
                     )
+                    Log.v("CHECK_LISTENER", "begin3")
                     update()
                 }
             } catch (e: Exception) {
             }
+        }
+        main.setOnClickListener {
+            (activity as? MainActivity)?.add(RangeFragment())
         }
         back.setOnClickListener {
             (activity as? MainActivity)?.back()

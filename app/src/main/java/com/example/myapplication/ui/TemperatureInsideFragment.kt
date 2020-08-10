@@ -82,7 +82,7 @@ class TemperatureInsideFragment : Fragment() {
             }
         }
         back.setOnClickListener {
-            (activity as? MainActivity)?.add(LightFragment())
+            (activity as? MainActivity)?.back()
         }
     }
 

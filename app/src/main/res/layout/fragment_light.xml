@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -14,7 +14,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back_arrow" />
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
@@ -34,7 +34,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical">
 
@@ -46,8 +46,8 @@
 
                 <ToggleButton
                     android:id="@+id/on_off"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
                     android:layout_gravity="center"
                     android:background="@drawable/s1"
                     android:text="ToggleButton"
@@ -56,21 +56,6 @@
 
                     />
             </LinearLayout>
-
-
-            <SeekBar
-                android:id="@+id/top_changer"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:max="100" />
-
-            <SeekBar
-                android:id="@+id/low_changer"
-                android:layout_width="368dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:max="100" />
 
         </LinearLayout>
     </FrameLayout>
