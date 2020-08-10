@@ -19,7 +19,7 @@ interface ApiService {
     @GET("get/humidity/state")
     suspend fun getHumidityState():HumidityState
     @POST("set/humidity/state")
-    suspend fun setHumidityState(state:HumidityState)
+    suspend fun setHumidityState(@Body state:HumidityState)
     @GET("get/lock/state")
     suspend fun getLockState():LockState
     @POST("set/lock/state")
@@ -28,5 +28,7 @@ interface ApiService {
     suspend fun getCameraState():CameraState
     @GET("get/history")
     suspend fun getHistory(): History
+    @GET("get/lock/history")
+    suspend fun getLockHistory(): LockHistory
 
 }

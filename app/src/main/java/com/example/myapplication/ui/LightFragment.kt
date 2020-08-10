@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.LightState
 import kotlinx.android.synthetic.main.fragment_light.*
@@ -20,46 +21,50 @@ class LightFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_light, container, false)
-        val refresh = view.findViewById<SwipeRefreshLayout>(R.id.refresh_light)
+        val refresh = view.findViewById<SwipeRefreshLayout>(R.id.refresh)
 
         refresh.setOnRefreshListener {
             update()
             refresh.isRefreshing = false
         }
         return view
-}
-    var lamp: Boolean = false
+    }
+
+    var light: Boolean = true
     var minLevel: Int = 0
     var maxLevel: Int = 0
     var nowlevel: Int = 0
 
     fun update() {
-        val lightValue = view!!.findViewById<Button>(R.id.light_main)
+        val main = view!!.findViewById<Button>(R.id.main)
         lifecycleScope.launch {
             val state = WebClient.getLightState()
-            lamp = state.state
+            light = state.state
             minLevel = state.top
             maxLevel = state.low
             nowlevel = state.value
-            lightValue.text = "$nowlevel %"
+            main.text = "$nowlevel %"
+
         }
 
     }
 
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         update()
-        light_on_off.setOnClickListener {
-          try {
-              lifecycleScope.launch {
-                  WebClient.setLightState(
-                      LightState(!lamp, minLevel, maxLevel, 0)
-                  )
-                  update()
-              }
-          }catch (e:Exception){}
+        on_off.setOnClickListener {
+            try {
+                lifecycleScope.launch {
+                    WebClient.setLightState(
+                        LightState(!light, minLevel, maxLevel, 0)
+                    )
+                    update()
+                }
+            } catch (e: Exception) {
+            }
+        }
+        back.setOnClickListener {
+            (activity as? MainActivity)?.back()
         }
     }
 

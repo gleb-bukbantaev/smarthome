@@ -33,7 +33,7 @@ class MenuFragment: Fragment() {
     var lightValue: Int = 0
     var humidityState: Boolean = false
     var humidityValue: Int = 0
-    var temperatureInsideState: Boolean = false
+    var heaterState: Boolean = false
     var temperatureInsideValue: Int = 0
     var temperatureOutsideValue: Int = 0
     var pressureValue: Int = 0
@@ -41,31 +41,25 @@ class MenuFragment: Fragment() {
     var lockState: Boolean = false
 
     fun update() {
-        val pressure = view!!.findViewById<Button>(R.id.pressure)
-        val temperatureOutside = view!!.findViewById<Button>(R.id.temperatureOutside)
-        val light = view!!.findViewById<Button>(R.id.come_light)
-        val humidity = view!!.findViewById<Button>(R.id.come_humidity)
-        val lock = view!!.findViewById<Button>(R.id.come_lock)
-        val temperature = view!!.findViewById<Button>(R.id.come_temperature)
-        val history = view!!.findViewById<Button>(R.id.come_history)
+
         lifecycleScope.launch {
             val state = WebClient.getMenuState()
             lightState = state.lightState
             lightValue = state.lightValue
             humidityState = state.humidityState
             humidityValue = state.humidityValue
-            temperatureInsideState = state.temperatureInsideState
+            heaterState = state.heaterState
             temperatureInsideValue = state.temperatureInsideValue
             temperatureOutsideValue = state.temperatureOutsideValue
             pressureValue = state.pressureValue
             windowState = state.windowState
             lockState = state.lockState
-            light.text = "$lightState | $lightValue"
-            humidity.text = "$humidityState | $humidityValue"
-            lock.text = "$lockState"
+            come_light.text = "$lightState | $lightValue"
+            come_humidity.text = "$humidityState | $humidityValue"
+            come_lock.text = "$lockState"
             pressure.text = "$pressureValue"
             temperatureOutside.text = "$temperatureOutsideValue"
-            temperature.text = "$temperatureInsideState | $temperatureInsideValue"
+            come_temperature.text = "$heaterState | $windowState | $temperatureInsideValue"
 
         }
 
@@ -73,19 +67,19 @@ class MenuFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         update()
         come_light.setOnClickListener {
-            /**/
+            (activity as? MainActivity)?.add(LightFragment())
         }
         come_humidity.setOnClickListener {
-            /**/
+            (activity as? MainActivity)?.add(HumidityFragment())
         }
         come_temperature.setOnClickListener {
-            /**/
+            (activity as? MainActivity)?.add(TemperatureInsideFragment())
         }
         come_lock.setOnClickListener {
-            /**/
+            (activity as? MainActivity)?.add(LockFragment())
         }
         come_history.setOnClickListener {
-            /**/
+            (activity as? MainActivity)?.add(HistoryFragment())
         }
 
     }

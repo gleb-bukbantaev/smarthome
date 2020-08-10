@@ -17,7 +17,7 @@ object WebClient {
 
     val api = Retrofit.Builder()
         .baseUrl("https://ms.newtonbox.ru/smarthome3/")
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
         .create(ApiService::class.java)
 

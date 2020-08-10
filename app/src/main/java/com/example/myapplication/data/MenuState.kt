@@ -5,7 +5,7 @@ class MenuState (
     val lightValue : Int,
     val humidityState : Boolean,
     val humidityValue : Int,
-    val temperatureInsideState : Boolean,
+    val heaterState : Boolean,
     val temperatureInsideValue : Int,
     val temperatureOutsideValue : Int,
     val pressureValue : Int,
