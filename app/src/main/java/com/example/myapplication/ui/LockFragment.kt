@@ -11,7 +11,10 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.LightState
 import com.example.myapplication.data.LockState
+import kotlinx.android.synthetic.main.fragment_humidity.*
 import kotlinx.android.synthetic.main.fragment_light.*
+import kotlinx.android.synthetic.main.fragment_light.back
+import kotlinx.android.synthetic.main.fragment_light.on_off
 import kotlinx.coroutines.launch
 
 class LockFragment:Fragment() {
@@ -36,6 +39,7 @@ class LockFragment:Fragment() {
         lifecycleScope.launch {
             val state = WebClient.getLockState()
             lock = state.state
+            on_off.isChecked = lock
         }
 
     }

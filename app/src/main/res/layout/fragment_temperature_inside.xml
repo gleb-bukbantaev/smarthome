@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -13,22 +13,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_back_arrow" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="Temperature  inside"/>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:gravity="center"
-                android:text="Temperature  inside">
 
 
-            </TextView>
 
             <Button
                 android:id="@+id/main"
@@ -40,10 +39,9 @@
             <ToggleButton
 
                 android:id="@+id/auto"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:background="@drawable/s1"
-                android:checked="false"
                 android:text="ToggleButton"
                 android:textOff="off"
                 android:textOn="on" />
@@ -56,17 +54,21 @@
 
                 <ToggleButton
                     android:id="@+id/heater_on_off"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textOn="Выключить"
+                    android:textOff="Включить"/>
 
                 <ToggleButton
                     android:id="@+id/window_on_off"
-                    android:layout_width="100dp"
+                    android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_gravity="center"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:textOn="Выключить"
+                    android:textOff="Включить"/>
             </LinearLayout>
 
 

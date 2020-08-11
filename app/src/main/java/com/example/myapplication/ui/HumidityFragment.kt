@@ -5,6 +5,7 @@ import android.provider.SyncStateContract.Helpers.update
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ToggleButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -13,6 +14,10 @@ import com.example.myapplication.R
 import com.example.myapplication.data.HumidityState
 import com.example.myapplication.data.LightState
 import kotlinx.android.synthetic.main.fragment_humidity.*
+import kotlinx.android.synthetic.main.fragment_humidity.back
+import kotlinx.android.synthetic.main.fragment_humidity.main
+import kotlinx.android.synthetic.main.fragment_humidity.on_off
+import kotlinx.android.synthetic.main.fragment_light.*
 import kotlinx.coroutines.launch
 
 class HumidityFragment:Fragment() {
@@ -36,6 +41,7 @@ class HumidityFragment:Fragment() {
     var nowlevel: Int = 0
 
     fun update() {
+        val modeChange = view!!.findViewById<ToggleButton>(R.id.auto)
         lifecycleScope.launch {
             val state = WebClient.getHumidityState()
             mode = state.mode
@@ -44,6 +50,9 @@ class HumidityFragment:Fragment() {
             maxLevel = state.low
             nowlevel = state.value
             main.text = "$nowlevel %"
+            modeChange.isChecked = mode
+            on_off.isChecked = humidity
+
         }
 
     }

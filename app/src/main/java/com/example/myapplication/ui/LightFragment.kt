@@ -45,7 +45,7 @@ class LightFragment : Fragment() {
             maxLevel = state.low
             nowlevel = state.value
             main.text = "$nowlevel %"
-
+            on_off.isChecked = light
         }
 
     }
