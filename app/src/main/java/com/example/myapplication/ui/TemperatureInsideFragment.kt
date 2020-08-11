@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ToggleButton
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -12,8 +13,10 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.LightState
 import com.example.myapplication.data.TemperatureInsideState
+import kotlinx.android.synthetic.main.fragment_humidity.*
 import kotlinx.android.synthetic.main.fragment_light.*
 import kotlinx.android.synthetic.main.fragment_light.back
+import kotlinx.android.synthetic.main.fragment_light.on_off
 import kotlinx.android.synthetic.main.fragment_temperature_inside.*
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.fragment_light.main as main1
@@ -43,6 +46,7 @@ class TemperatureInsideFragment : Fragment() {
 
     fun update() {
         val main = view!!.findViewById<Button>(R.id.main)
+        val modeChange = view!!.findViewById<ToggleButton>(R.id.auto)
         lifecycleScope.launch {
             val state = WebClient.getTemperatureInsideState()
             mode = state.mode
@@ -52,6 +56,9 @@ class TemperatureInsideFragment : Fragment() {
             maxLevel = state.top
             nowlevel = state.value
             main.text = "$nowlevel C*"
+            modeChange.isChecked = mode
+            heater_on_off.isChecked = heater
+            window_on_off.isChecked = window
         }
 
     }

@@ -30,7 +30,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -42,16 +42,20 @@
                 android:text="0%" />
 
             <ToggleButton
-                android:id="@+id/on_off"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/auto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:background="@drawable/s1"
                 android:text="ToggleButton"
                 android:textOff="off"
-                android:textOn="on"
-
-                />
+                android:textOn="on" />
+            <ToggleButton
+                android:id="@+id/on_off"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
         </LinearLayout>
 
 
