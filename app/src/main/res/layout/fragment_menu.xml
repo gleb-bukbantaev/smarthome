@@ -44,12 +44,14 @@
                 android:orientation="horizontal">
 
 
-                <Button
+                <ImageButton
                     android:id="@+id/come_light"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:text="Light" />
+                    android:text="Light"
+                    android:src="@drawable/ic_outline_light_24"
+                    />
 
                 <Button
                     android:id="@+id/come_humidity"

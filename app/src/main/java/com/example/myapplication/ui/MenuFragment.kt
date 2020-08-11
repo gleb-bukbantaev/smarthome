@@ -1,5 +1,7 @@
 package com.example.myapplication.ui
 
+import android.content.res.ColorStateList
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -54,8 +56,10 @@ class MenuFragment: Fragment() {
             pressureValue = state.pressureValue
             windowState = state.windowState
             lockState = state.lockState
-            come_light.text = "$lightState | $lightValue"
-            come_humidity.text = "$humidityState | $humidityValue"
+            come_light.imageTintList=if (lightState==true){
+                ColorStateList.valueOf(Color.parseColor("#ffff00"))}
+
+                come_humidity.text = "$humidityState | $humidityValue"
             come_lock.text = "$lockState"
             pressure.text = "$pressureValue"
             temperatureOutside.text = "$temperatureOutsideValue"
