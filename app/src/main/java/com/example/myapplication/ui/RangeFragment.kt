@@ -8,11 +8,13 @@ import android.view.ViewGroup
 import android.widget.NumberPicker
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.ChangeRange
 import com.example.myapplication.data.HumidityState
 import com.example.myapplication.data.LightState
 import com.example.myapplication.data.TemperatureInsideState
+import kotlinx.android.synthetic.main.fragment_light.*
 import kotlinx.android.synthetic.main.fragment_range.*
 import kotlinx.coroutines.launch
 
@@ -45,8 +47,8 @@ class RangeFragment(val range: ChangeRange): Fragment() {
                             )
 
                         }
-                    } catch (e: Exception) {
-                    }
+                    } catch (e: Exception) {}
+
                 ChangeRange.HUMIDITY ->
                     try {
 
@@ -57,8 +59,7 @@ class RangeFragment(val range: ChangeRange): Fragment() {
                             )
 
                         }
-                    } catch (e: Exception) {
-                    }
+                    } catch (e: Exception) {}
                 ChangeRange.TEMPERATURE ->
                     try {
 
@@ -69,9 +70,9 @@ class RangeFragment(val range: ChangeRange): Fragment() {
                         )
 
                     }
-                } catch (e: Exception) {
-                }
+                } catch (e: Exception) {}
             }
+            (activity as? MainActivity)?.back()
         }
     }
 
