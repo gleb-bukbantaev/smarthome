@@ -2,6 +2,8 @@ package com.example.myapplication.data
 
 class MenuState (
     val lightState : Boolean,
+    /*val lightTop : Int
+     val lightLow : Int*/
     val lightValue : Int,
     val humidityState : Boolean,
     val humidityValue : Int,

@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
+import com.example.myapplication.data.ChangeRange
 import com.example.myapplication.data.LightState
 import kotlinx.android.synthetic.main.fragment_light.*
 import kotlinx.coroutines.launch
@@ -68,7 +69,7 @@ class LightFragment : Fragment() {
             }
         }
         main.setOnClickListener {
-            (activity as? MainActivity)?.add(RangeFragment())
+            (activity as? MainActivity)?.add(RangeFragment(ChangeRange.LIGHT))
         }
         back.setOnClickListener {
             (activity as? MainActivity)?.back()
