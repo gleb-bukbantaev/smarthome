@@ -1,14 +1,22 @@
-<com.jjoe64.graphview.GraphView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back_arrow"/>
+<com.jjoe64.graphview.GraphView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="1dp"
     android:paddingLeft="2dp"
-    android:paddingRight="1dp"
     android:paddingTop="1dp"
-    tools:context=".MainActivity" >
+    android:paddingRight="1dp"
+    android:paddingBottom="1dp"
+    tools:context=".MainActivity">
 
 </com.jjoe64.graphview.GraphView>
+</FrameLayout>
