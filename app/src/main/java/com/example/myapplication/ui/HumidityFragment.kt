@@ -1,7 +1,7 @@
 package com.example.myapplication.ui
 
+import WebClient
 import android.os.Bundle
-import android.provider.SyncStateContract.Helpers.update
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,10 +13,7 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.ChangeRange
 import com.example.myapplication.data.HumidityState
-import kotlinx.android.synthetic.main.fragment_humidity.back
-import kotlinx.android.synthetic.main.fragment_humidity.main
-import kotlinx.android.synthetic.main.fragment_humidity.on_off
-
+import kotlinx.android.synthetic.main.fragment_humidity.*
 import kotlinx.coroutines.launch
 
 class HumidityFragment:Fragment() {

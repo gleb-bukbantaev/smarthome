@@ -22,6 +22,10 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MessagingService : FirebaseMessagingService() {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a7b0731a40312c6cd82fad25d301bad32dcf5a5
     val notificationManager by lazy { NotificationManagerCompat.from(this) }
 
     override fun onCreate() {

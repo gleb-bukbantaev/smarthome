@@ -1,5 +1,6 @@
 package com.example.myapplication.ui
 
+import WebClient
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,12 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
-import com.example.myapplication.data.LightState
 import com.example.myapplication.data.LockState
-import kotlinx.android.synthetic.main.fragment_humidity.*
 import kotlinx.android.synthetic.main.fragment_light.*
-import kotlinx.android.synthetic.main.fragment_light.back
-import kotlinx.android.synthetic.main.fragment_light.on_off
 import kotlinx.coroutines.launch
 
 class LockFragment:Fragment() {

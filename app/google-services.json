@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "621730775342",
+    "firebase_url": "https://smarthome3-ab65a.firebaseio.com",
+    "project_id": "smarthome3-ab65a",
+    "storage_bucket": "smarthome3-ab65a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621730775342:android:e59a7dc5a1b82fc652babf",
+        "android_client_info": {
+          "package_name": "com.team3.HomeCheck"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621730775342-cgseeo31fctmp1v844jdm3ovufqfgvd4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfN55ssxRmpIA2FclHEgO2qHttayF2fPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621730775342-cgseeo31fctmp1v844jdm3ovufqfgvd4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
