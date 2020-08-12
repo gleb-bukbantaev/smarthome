@@ -25,6 +25,7 @@ class HistoryFragment:Fragment() {
             DataPoint(4.0, 16.0),
             DataPoint(5.0, 18.0),
             DataPoint(6.0, 19.0)
+
         ))
         graph.addSeries(graphSeries)
 
