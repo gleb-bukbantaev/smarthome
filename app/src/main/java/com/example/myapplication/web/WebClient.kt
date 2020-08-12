@@ -95,4 +95,10 @@ object WebClient {
             api.getHistory()
         }
     }
+
+    suspend fun setToken():TokenRequest{
+        return withContext(Dispatchers.IO){
+            api.setToken()
+        }
+    }
 }

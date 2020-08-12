@@ -1,5 +1,6 @@
 package com.example.myapplication.ui
 
+import WebClient
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater

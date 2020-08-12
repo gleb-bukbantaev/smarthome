@@ -1,7 +1,7 @@
 package com.example.myapplication.ui
 
+import WebClient
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +14,6 @@ import com.example.myapplication.data.ChangeRange
 import com.example.myapplication.data.HumidityState
 import com.example.myapplication.data.LightState
 import com.example.myapplication.data.TemperatureInsideState
-import kotlinx.android.synthetic.main.fragment_light.*
 import kotlinx.android.synthetic.main.fragment_range.*
 import kotlinx.coroutines.launch
 
@@ -35,6 +34,7 @@ class RangeFragment(val range: ChangeRange): Fragment() {
         topPicker.maxValue = 100
         lowPicker.minValue = 0
         lowPicker.maxValue = 100
+        
         accept.setOnClickListener {
             when (range){
                 ChangeRange.LIGHT ->

@@ -30,5 +30,7 @@ interface ApiService {
     suspend fun getHistory(): History
     @GET("get/lock/history")
     suspend fun getLockHistory(): LockHistory
+    @POST("set/token")
+    suspend fun setToken():TokenRequest
 
 }
