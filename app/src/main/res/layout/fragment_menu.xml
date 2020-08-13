@@ -58,6 +58,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_opacity_24"
+
                    />
             </LinearLayout>
 
@@ -72,6 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:src="@drawable/ic_temperature_fragment"
                     />
 
                 <ImageButton
@@ -79,6 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="1"
+                    android:src="@drawable/ic_baseline_lock_24"
                    />
             </LinearLayout>
 
