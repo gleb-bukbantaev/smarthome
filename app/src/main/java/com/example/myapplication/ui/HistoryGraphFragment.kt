@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 import com.example.myapplication.data.HistoryGraph
+import com.jjoe64.graphview.GraphView
+import com.jjoe64.graphview.series.DataPoint
+import com.jjoe64.graphview.series.LineGraphSeries
 
 class HistoryGraphFragment(val type : HistoryGraph): Fragment() {
     override fun onCreateView(
@@ -15,10 +18,23 @@ class HistoryGraphFragment(val type : HistoryGraph): Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_history_graph, container, false)
+        val graph = view.findViewById<GraphView>(R.id.layout)
+
+        fun drawgraph(){}
+        val graphSeries  = LineGraphSeries(arrayOf(
+            DataPoint(2.0, 4.0),
+            DataPoint(3.0, 12.0),
+            DataPoint(4.0, 16.0),
+            DataPoint(5.0, 18.0),
+            DataPoint(6.0, 19.0)
+
+        ))
+        graph.addSeries(graphSeries)
+
+
         return view
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 }
+
+
