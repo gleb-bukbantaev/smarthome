@@ -9,7 +9,7 @@ class DoorActivity :AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_door)
-        val photo = intent.getStringExtra("photo") 
+        val photo = intent.getStringExtra("photo")
     }
     fun getDoorContentIntent(photo: String): PendingIntent {
         val intent = Intent(this, DoorActivity::class.java)
