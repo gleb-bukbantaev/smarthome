@@ -26,20 +26,43 @@ class RangeFragment(val range: ChangeRange): Fragment() {
         val view = inflater.inflate(R.layout.fragment_range, container, false)
         return view
     }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val topPicker = view.findViewById<NumberPicker>(R.id.topPicker)
         val lowPicker = view.findViewById<NumberPicker>(R.id.lowPicker)
         topPicker.minValue = 0
         topPicker.maxValue = 100
         lowPicker.minValue = 0
         lowPicker.maxValue = 100
-        
+        when (range){
+            ChangeRange.LIGHT ->
+                try {
+                lifecycleScope.launch {
+                    val state = WebClient.getLightState()
+                    lowPicker.value = state.low
+                    topPicker.value = state.top
+                }
+            } catch (e: Exception) {}
+            ChangeRange.HUMIDITY ->
+                try {
+                    lifecycleScope.launch {
+                        val state = WebClient.getHumidityState()
+                        lowPicker.value = state.low
+                        topPicker.value = state.top
+                    }
+                } catch (e: Exception) {}
+            ChangeRange.TEMPERATURE ->
+                try {
+                    lifecycleScope.launch {
+                        val state = WebClient.getTemperatureInsideState()
+                        lowPicker.value = state.low
+                        topPicker.value = state.top
+                    }
+                } catch (e: Exception) {}
+        }
         accept.setOnClickListener {
             when (range){
                 ChangeRange.LIGHT ->
                     try {
-
                         lifecycleScope.launch {
                             val state = WebClient.getLightState()
                             WebClient.setLightState(
