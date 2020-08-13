@@ -3,6 +3,7 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.myapplication.ui.HistoryFragment
 import com.example.myapplication.ui.LightFragment
 import com.example.myapplication.ui.MenuFragment
 import com.example.myapplication.ui.RangeFragment

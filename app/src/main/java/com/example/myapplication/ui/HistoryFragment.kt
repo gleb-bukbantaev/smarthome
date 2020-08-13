@@ -25,9 +25,21 @@ class HistoryFragment:Fragment() {
             DataPoint(5.0, 18.0),
             DataPoint(6.0, 19.0)
 
+
         ))
         graph.addSeries(graphSeries)
 
+        val graphSeries2  = LineGraphSeries(arrayOf(
+            DataPoint(2.0, 4.0),
+            DataPoint(3.0, 6.0),
+            DataPoint(4.0, 8.0),
+            DataPoint(5.0, 9.0)
+
+
+
+        ))
+
+        graph.addSeries(graphSeries2)
         return view
     }
 
