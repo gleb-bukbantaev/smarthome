@@ -56,11 +56,10 @@ class MenuFragment: Fragment() {
             pressureValue = state.pressureValue
             windowState = state.windowState
             lockState = state.lockState
-            come_light.imageTintList=if (lightState==true){
+            come_light.imageTintList=if (lightState){
                 ColorStateList.valueOf(Color.parseColor("#ffff00"))}
             else { ColorStateList.valueOf(Color.parseColor("#ffff00"))}
-
-                come_humidity.text = "$humidityState | $humidityValue"
+            come_humidity.text = "$humidityState | $humidityValue"
             come_lock.text = "$lockState"
             pressure.text = "$pressureValue"
             temperatureOutside.text = "$temperatureOutsideValue"

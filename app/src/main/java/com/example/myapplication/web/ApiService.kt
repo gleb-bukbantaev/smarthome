@@ -1,6 +1,5 @@
 package com.example.myapplication.web
 
-import TokenRequest
 import com.example.myapplication.data.*
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -32,6 +31,6 @@ interface ApiService {
     @GET("get/lock/history")
     suspend fun getLockHistory(): LockHistory
     @POST("set/token")
-    suspend fun setToken():TokenRequest
+    suspend fun setToken(state: TokenRequest)
 
 }
