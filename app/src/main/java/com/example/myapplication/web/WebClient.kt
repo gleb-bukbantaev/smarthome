@@ -1,5 +1,3 @@
-import WebClient.logging
-import com.example.myapplication.Data.TokenRequest
 import com.example.myapplication.data.*
 import com.example.myapplication.web.ApiService
 import com.google.gson.FieldNamingPolicy
@@ -99,6 +97,11 @@ object WebClient {
     suspend fun setToken(state: TokenRequest) {
         return withContext(Dispatchers.IO) {
             api.setToken(state)
+        }
+    }
+    suspend fun getLockHistory():LockHistory {
+        return withContext(Dispatchers.IO) {
+            api.getLockHistory()
         }
     }
 }

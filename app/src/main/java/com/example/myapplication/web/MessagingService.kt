@@ -1,11 +1,11 @@
 package com.example.myapplication.web
 
+import WebClient
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Intent
 import android.graphics.Bitmap
-import android.media.session.MediaSession
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -13,19 +13,16 @@ import androidx.core.content.getSystemService
 import androidx.core.graphics.drawable.toBitmap
 import coil.Coil
 import coil.request.GetRequest
-import com.example.myapplication.Data.TokenRequest
 import com.example.myapplication.DoorActivity
 import com.example.myapplication.R
+import com.example.myapplication.data.TokenRequest
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
 class MessagingService : FirebaseMessagingService() {
-<<<<<<< HEAD
-=======
 
->>>>>>> 8a7b0731a40312c6cd82fad25d301bad32dcf5a5
     val notificationManager by lazy { NotificationManagerCompat.from(this) }
 
     override fun onCreate() {
