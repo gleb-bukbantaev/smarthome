@@ -15,7 +15,7 @@ import com.example.myapplication.R
 import kotlinx.android.synthetic.main.fragment_menu.*
 import kotlinx.coroutines.launch
 
-class MenuFragment: Fragment() {
+class MenuFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -56,9 +56,11 @@ class MenuFragment: Fragment() {
             pressureValue = state.pressureValue
             windowState = state.windowState
             lockState = state.lockState
-            come_light.imageTintList=if (lightState){
-                ColorStateList.valueOf(Color.parseColor("#ffff00"))}
-            else { ColorStateList.valueOf(Color.parseColor("#ffff00"))}
+            come_light.imageTintList = if (lightState) {
+                ColorStateList.valueOf(Color.parseColor("#ffff00"))
+            } else {
+                ColorStateList.valueOf(Color.parseColor("#ffff00"))
+            }
             come_humidity.text = "$humidityState | $humidityValue"
             come_lock.text = "$lockState"
             pressure.text = "$pressureValue"
@@ -68,6 +70,7 @@ class MenuFragment: Fragment() {
         }
 
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         update()
         come_light.setOnClickListener {

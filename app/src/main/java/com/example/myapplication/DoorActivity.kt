@@ -1,7 +1,6 @@
 package com.example.myapplication
 
-import android.app.PendingIntent
-import android.content.Intent
+import WebClient
 import android.graphics.Bitmap
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
