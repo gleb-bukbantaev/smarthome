@@ -56,15 +56,26 @@ class MenuFragment: Fragment() {
             pressureValue = state.pressureValue
             windowState = state.windowState
             lockState = state.lockState
-            come_light.imageTintList=if (lightState==true){
+            come_light.imageTintList=if (lightState){
                 ColorStateList.valueOf(Color.parseColor("#ffff00"))}
-            else { ColorStateList.valueOf(Color.parseColor("#ffff00"))}
+            else { ColorStateList.valueOf(Color.parseColor("#808080"))}
 
-                come_humidity.text = "$humidityState | $humidityValue"
-            come_lock.text = "$lockState"
-            pressure.text = "$pressureValue"
-            temperatureOutside.text = "$temperatureOutsideValue"
-            come_temperature.text = "$heaterState | $windowState | $temperatureInsideValue"
+                come_humidity.imageTintList=if (humidityState){
+                    ColorStateList.valueOf(Color.parseColor("#42aaff"))}
+                else { ColorStateList.valueOf(Color.parseColor("#808080"))}
+            come_lock.imageTintList=if (lockState){
+                ColorStateList.valueOf(Color.parseColor("#202020"))}
+            else { ColorStateList.valueOf(Color.parseColor("#808080"))}
+            pressure.imageTintList=if (){
+                ColorStateList.valueOf(Color.parseColor("#ff0000"))}
+            else { ColorStateList.valueOf(Color.parseColor("#808080"))}
+            temperatureOutside.imageTintList=if (){
+                ColorStateList.valueOf(Color.parseColor("#00cc00"))}
+            else { ColorStateList.valueOf(Color.parseColor("#808080"))}
+
+            come_temperature.imageTintList=if (){
+                ColorStateList.valueOf(Color.parseColor("#00cc00"))}
+            else { ColorStateList.valueOf(Color.parseColor("#808080"))}
 
         }
 

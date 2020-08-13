@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button
+            <ImageButton
                 android:id="@+id/pressure"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -24,11 +24,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/temperatureOutside"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="temperature" />
+                />
         </LinearLayout>
 
         <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -49,16 +49,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:text="Light"
+
                     android:src="@drawable/ic_outline_light_24"
                     />
 
-                <Button
+                <ImageButton
                     android:id="@+id/come_humidity"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:text="Humidity" />
+                   />
             </LinearLayout>
 
             <LinearLayout
@@ -67,19 +67,19 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageButton
                     android:id="@+id/come_temperature"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:text="temperature" />
+                    />
 
-                <Button
+                <ImageButton
                     android:id="@+id/come_lock"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:text="lock" />
+                   />
             </LinearLayout>
 
             <LinearLayout
@@ -96,12 +96,12 @@
                 android:gravity="center"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageButton
                     android:id="@+id/come_history"
                     android:layout_width="wrap_content"
                     android:layout_height="100dp"
                     android:layout_weight="1"
-                    android:text="History" />
+                    />
             </LinearLayout>
 
         </LinearLayout>
