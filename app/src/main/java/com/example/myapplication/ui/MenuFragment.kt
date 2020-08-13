@@ -62,7 +62,7 @@ class MenuFragment : Fragment() {
                 ColorStateList.valueOf(Color.parseColor("#808080"))
             }
             come_humidity.imageTintList = if (humidityState) {
-                ColorStateList.valueOf(Color.parseColor("#ffff00"))
+                ColorStateList.valueOf(Color.parseColor("#6495ed"))
             } else {
                 ColorStateList.valueOf(Color.parseColor("#808080"))
             come_lock.text = "$lockState"
