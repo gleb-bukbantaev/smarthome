@@ -65,13 +65,9 @@ class MenuFragment : Fragment() {
                 ColorStateList.valueOf(Color.parseColor("#6495ed"))
             } else {
                 ColorStateList.valueOf(Color.parseColor("#808080"))
-            come_lock.text = "$lockState"
-            pressure.text = "$pressureValue"
-            temperatureOutside.text = "$temperatureOutsideValue"
-            come_temperature.text = "$heaterState | $windowState | $temperatureInsideValue"
+            }
 
         }
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

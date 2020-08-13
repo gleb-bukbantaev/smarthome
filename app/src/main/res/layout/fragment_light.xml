@@ -51,8 +51,8 @@
                     android:layout_gravity="center"
                     android:background="@drawable/s1"
                     android:text="ToggleButton"
-                    android:textOff="off"
-                    android:textOn="on"
+                    android:textOff="Выклчить"
+                    android:textOn="Включить"
 
                     />
             </LinearLayout>

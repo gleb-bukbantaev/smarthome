@@ -65,6 +65,16 @@ class HumidityFragment:Fragment() {
                 }
             }catch (e:Exception){}
         }
+        auto.setOnClickListener {
+            try {
+                lifecycleScope.launch {
+                    WebClient.setHumidityState(
+                        HumidityState(!mode, humidity, minLevel, maxLevel, 0)
+                    )
+                    update()
+                }
+            }catch (e:Exception){}
+        }
         main.setOnClickListener {
             (activity as? MainActivity)?.add(RangeFragment(ChangeRange.HUMIDITY))
         }

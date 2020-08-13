@@ -2,7 +2,8 @@ package com.example.myapplication.data
 
 enum class HistoryGraph {
     HUMIDITY,
-    TEMPERATURE,
+    TEMPERATURE_INSIDE,
+    TEMPERATURE_OUTSIDE,
     ELECTRICITY,
     PRESSURE
 }
