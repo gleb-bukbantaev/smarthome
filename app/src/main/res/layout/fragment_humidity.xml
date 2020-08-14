@@ -42,7 +42,8 @@
                 android:background="@drawable/s1"
                 android:text="ToggleButton"
                 android:textOff="Открыть"
-                android:textOn="Закрыть" />
+                android:textOn="Закрыть"
+                android:layout_gravity="center"/>
 
             <ToggleButton
                 android:id="@+id/on_off"

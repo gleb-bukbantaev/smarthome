@@ -16,7 +16,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
-class LockFragment:Fragment() {
+class LockFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,6 +31,7 @@ class LockFragment:Fragment() {
         }
         return view
     }
+
     var lock: Boolean = false
 
 
@@ -44,12 +45,10 @@ class LockFragment:Fragment() {
     }
 
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         viewLifecycleOwner.lifecycleScope
             .launch {
-                while (isActive){
+                while (isActive) {
                     update()
                     delay(5000)
                 }
@@ -62,7 +61,8 @@ class LockFragment:Fragment() {
                     )
                     update()
                 }
-            }catch (e:Exception){}
+            } catch (e: Exception) {
+            }
         }
         back.setOnClickListener {
             (activity as? MainActivity)?.back()

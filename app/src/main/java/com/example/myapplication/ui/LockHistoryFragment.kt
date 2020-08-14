@@ -45,7 +45,7 @@ class LockHistoryFragment: Fragment() {
         class ViewHolder(override val containerView: View): RecyclerView.ViewHolder(containerView),LayoutContainer{
             fun set (element: LockHistoryItem){
                 containerView.type.text = element.type
-                containerView.time.text = "${element.day}.${element.month}.${element.hour}"
+                containerView.time.text = element.time
             }
         }
 

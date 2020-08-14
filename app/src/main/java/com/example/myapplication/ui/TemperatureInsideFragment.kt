@@ -28,11 +28,6 @@ class TemperatureInsideFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_temperature_inside, container, false)
-        val refresh = view.findViewById<SwipeRefreshLayout>(R.id.refresh)
-        refresh.setOnRefreshListener {
-            update()
-            refresh.isRefreshing = false
-        }
         return view
 
     }
@@ -101,7 +96,7 @@ class TemperatureInsideFragment : Fragment() {
             heater_on_off.isEnabled = !b
             window_on_off.isEnabled = !b
             lifecycleScope.launch { WebClient.setTemperatureInsideState(
-                TemperatureInsideState(b, heater, window, top = maxLevel, low = minLevel, value = 0)
+                TemperatureInsideState(b, heater, window, maxLevel, minLevel, 0)
             ) }
         }
         back.setOnClickListener {

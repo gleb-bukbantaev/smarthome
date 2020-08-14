@@ -27,11 +27,6 @@ class HumidityFragment:Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_humidity, container, false)
-        val refresh = view.findViewById<SwipeRefreshLayout>(R.id.refresh)
-        refresh.setOnRefreshListener {
-            update()
-            refresh.isRefreshing = false
-        }
         return view
     }
     var mode: Boolean = false
@@ -78,7 +73,7 @@ class HumidityFragment:Fragment() {
         auto.setOnCheckedChangeListener { compoundButton, b ->
             on_off.isEnabled = !b
             lifecycleScope.launch { WebClient.setHumidityState(
-                HumidityState(mode = b, state = humidity, top = maxLevel, low = minLevel, value = 0)
+                HumidityState(b, humidity, maxLevel, minLevel, 0)
             ) }
         }
         main.setOnClickListener {

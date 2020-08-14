@@ -40,12 +40,10 @@
                 android:text="%" />
 
             <ToggleButton
-                android:id="@+id/toggleButton"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:id="@+id/on_off"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:background="@drawable/s1"
-                android:checked="true"
-
                 android:text="ToggleButton"
                 android:textOff="off"
                 android:textOn="on" />

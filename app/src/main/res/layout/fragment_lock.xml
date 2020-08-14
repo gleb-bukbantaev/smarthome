@@ -29,7 +29,7 @@
 
             <ToggleButton
 
-                android:id="@+id/auto"
+                android:id="@+id/on_off"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:background="@drawable/s1"

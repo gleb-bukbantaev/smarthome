@@ -26,12 +26,6 @@ class LightFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_light, container, false)
-        val refresh = view.findViewById<SwipeRefreshLayout>(R.id.refresh)
-
-        refresh.setOnRefreshListener {
-            update()
-            refresh.isRefreshing = false
-        }
         return view
     }
 
