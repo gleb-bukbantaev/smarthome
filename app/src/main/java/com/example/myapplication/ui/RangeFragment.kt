@@ -36,12 +36,13 @@ class RangeFragment(val range: ChangeRange): Fragment() {
         when (range){
             ChangeRange.LIGHT ->
                 try {
-                lifecycleScope.launch {
-                    val state = WebClient.getLightState()
-                    lowPicker.value = state.low
-                    topPicker.value = state.top
+                    lifecycleScope.launch {
+                        val state = WebClient.getLightState()
+                        lowPicker.value = state.low
+                        topPicker.value = state.top
+                    }
+                } catch (e: Exception) {
                 }
-            } catch (e: Exception) {}
             ChangeRange.HUMIDITY ->
                 try {
                     lifecycleScope.launch {
@@ -49,7 +50,8 @@ class RangeFragment(val range: ChangeRange): Fragment() {
                         lowPicker.value = state.low
                         topPicker.value = state.top
                     }
-                } catch (e: Exception) {}
+                } catch (e: Exception) {
+                }
             ChangeRange.TEMPERATURE ->
                 try {
                     lifecycleScope.launch {
@@ -57,20 +59,23 @@ class RangeFragment(val range: ChangeRange): Fragment() {
                         lowPicker.value = state.low
                         topPicker.value = state.top
                     }
-                } catch (e: Exception) {}
+                } catch (e: Exception) {
+                }
         }
         accept.setOnClickListener {
-            when (range){
+
+            when (range) {
                 ChangeRange.LIGHT ->
                     try {
                         lifecycleScope.launch {
                             val state = WebClient.getLightState()
                             WebClient.setLightState(
-                                LightState(state.state, lowPicker.value, topPicker.value, 0)
+                                LightState(state.state, topPicker.value, lowPicker.value, 0)
                             )
-
+                            (activity as? MainActivity)?.back()
                         }
-                    } catch (e: Exception) {}
+                    } catch (e: Exception) {
+                    }
 
                 ChangeRange.HUMIDITY ->
                     try {
@@ -78,24 +83,29 @@ class RangeFragment(val range: ChangeRange): Fragment() {
                         lifecycleScope.launch {
                             val state = WebClient.getHumidityState()
                             WebClient.setHumidityState(
-                                HumidityState(state.mode, state.state, lowPicker.value, topPicker.value, 0)
+                                HumidityState(state.mode, state.state, topPicker.value, lowPicker.value,
+                                    0
+                                )
                             )
-
+                            (activity as? MainActivity)?.back()
                         }
-                    } catch (e: Exception) {}
+                    } catch (e: Exception) {
+                    }
                 ChangeRange.TEMPERATURE ->
                     try {
 
-                    lifecycleScope.launch {
-                        val state = WebClient.getTemperatureInsideState()
-                        WebClient.setTemperatureInsideState(
-                            TemperatureInsideState(state.mode, state.heaterState, state.windowState, lowPicker.value, topPicker.value, 0)
-                        )
-
+                        lifecycleScope.launch {
+                            val state = WebClient.getTemperatureInsideState()
+                            WebClient.setTemperatureInsideState(
+                                TemperatureInsideState(state.mode, state.heaterState, state.windowState, topPicker.value, lowPicker.value,
+                                    0
+                                )
+                            )
+                            (activity as? MainActivity)?.back()
+                        }
+                    } catch (e: Exception) {
                     }
-                } catch (e: Exception) {}
             }
-            (activity as? MainActivity)?.back()
         }
     }
 

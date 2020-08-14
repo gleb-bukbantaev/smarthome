@@ -1,116 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/refresh_menu"
+
+<FrameLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/pressure"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="pressure" />
+
+
+        <TextView
+            android:id="@+id/temperatureOutside"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="temperature outside" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/pressure"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="pressure" />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="2" />
+            <ImageButton
+                android:id="@+id/come_light"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
 
-            <Button
-                android:id="@+id/temperatureOutside"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="temperature outside"
+                android:src="@drawable/ic_outline_light_24" />
+
+            <ImageButton
+                android:id="@+id/come_humidity"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_opacity_24"
+
                 />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/come_temperature"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_temperature_fragment" />
 
-
-                <ImageButton
-                    android:id="@+id/come_light"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-
-                    android:src="@drawable/ic_outline_light_24"
-                    />
-
-                <ImageButton
-                    android:id="@+id/come_humidity"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_opacity_24"
-
-                   />
-            </LinearLayout>
-
-            <LinearLayout
+            <ImageButton
+                android:id="@+id/come_lock"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_lock_24" />
+        </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/come_temperature"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_temperature_fragment"
-                    />
-
-                <ImageButton
-                    android:id="@+id/come_lock"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_lock_24"
-                   />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/come_history"
-                    android:layout_width="wrap_content"
-                    android:layout_height="100dp"
-                    android:layout_weight="1"
-                    android:src="@drawable/ic_baseline_menu__24"
-                    />
-            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
         </LinearLayout>
-    </FrameLayout>
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/come_history"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_baseline_menu__24" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>
+
+

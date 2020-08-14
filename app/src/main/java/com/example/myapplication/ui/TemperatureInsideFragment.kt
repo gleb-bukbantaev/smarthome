@@ -16,6 +16,8 @@ import com.example.myapplication.data.ChangeRange
 import com.example.myapplication.data.TemperatureInsideState
 import kotlinx.android.synthetic.main.fragment_light.back
 import kotlinx.android.synthetic.main.fragment_temperature_inside.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 
@@ -63,12 +65,18 @@ class TemperatureInsideFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        update()
+        viewLifecycleOwner.lifecycleScope
+            .launch {
+                while (isActive){
+                    update()
+                    delay(5000)
+                }
+            }
         heater_on_off.setOnClickListener {
             try {
                 lifecycleScope.launch {
                     WebClient.setTemperatureInsideState(
-                        TemperatureInsideState(mode, !heater, window, minLevel, maxLevel, 0)
+                        TemperatureInsideState(mode, !heater, window, maxLevel, minLevel, 0)
                     )
                     update()
                 }
@@ -82,12 +90,19 @@ class TemperatureInsideFragment : Fragment() {
             try {
                 lifecycleScope.launch {
                     WebClient.setTemperatureInsideState(
-                        TemperatureInsideState(mode, heater, !window, minLevel, maxLevel, 0)
+                        TemperatureInsideState(mode, heater, !window, maxLevel, minLevel, 0)
                     )
                     update()
                 }
             } catch (e: Exception) {
             }
+        }
+        auto.setOnCheckedChangeListener { compoundButton, b ->
+            heater_on_off.isEnabled = !b
+            window_on_off.isEnabled = !b
+            lifecycleScope.launch { WebClient.setTemperatureInsideState(
+                TemperatureInsideState(b, heater, window, top = maxLevel, low = minLevel, value = 0)
+            ) }
         }
         back.setOnClickListener {
             (activity as? MainActivity)?.back()

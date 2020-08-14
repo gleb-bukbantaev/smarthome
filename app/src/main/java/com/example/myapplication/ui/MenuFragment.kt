@@ -13,6 +13,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import kotlinx.android.synthetic.main.fragment_menu.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 class MenuFragment : Fragment() {
@@ -22,11 +24,6 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_menu, container, false)
-        val refresh = view.findViewById<SwipeRefreshLayout>(R.id.refresh_menu)
-        refresh.setOnRefreshListener {
-            update()
-            refresh.isRefreshing = false
-        }
         return view
     }
 
@@ -66,12 +63,19 @@ class MenuFragment : Fragment() {
             } else {
                 ColorStateList.valueOf(Color.parseColor("#808080"))
             }
-
+            pressure.text = "$pressureValue"
+            temperatureOutside.text = "$temperatureOutsideValue"
         }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        update()
+        viewLifecycleOwner.lifecycleScope
+            .launch {
+                while (isActive) {
+                    update()
+                    delay(5000)
+                }
+            }
         come_light.setOnClickListener {
             (activity as? MainActivity)?.add(LightFragment())
         }

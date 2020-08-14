@@ -11,12 +11,45 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <Button
-            android:id="@+id/come_humidity"
-            android:layout_width="wrap_content"
+            android:id="@+id/come_humidity_history"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center" />
+            android:layout_gravity="center"
+            android:text="Humidity History"/>
+        <Button
+            android:id="@+id/come_temperature_inside_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Temperature Inside History"/>
+        <Button
+            android:id="@+id/come_temperature_outside_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Temperature Outside History"/>
+
+        <Button
+            android:id="@+id/come_power_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Power History"/>
+        <Button
+            android:id="@+id/come_pressure_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Pressure History"/>
+        <Button
+            android:id="@+id/come_lock_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Exist History"/>
     </LinearLayout>
 </FrameLayout>

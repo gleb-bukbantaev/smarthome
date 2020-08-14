@@ -12,6 +12,8 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.LockState
 import kotlinx.android.synthetic.main.fragment_light.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 class LockFragment:Fragment() {
@@ -45,7 +47,13 @@ class LockFragment:Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        update()
+        viewLifecycleOwner.lifecycleScope
+            .launch {
+                while (isActive){
+                    update()
+                    delay(5000)
+                }
+            }
         on_off.setOnClickListener {
             try {
                 lifecycleScope.launch {

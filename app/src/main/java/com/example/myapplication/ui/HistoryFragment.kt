@@ -22,7 +22,24 @@ class HistoryFragment:Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        come_humidity.setOnClickListener {
-            (activity as? MainActivity)?.add(HistoryGraphFragment(HistoryGraph.HUMIDITY)) }
+
+        come_humidity_history.setOnClickListener {
+            (activity as? MainActivity)?.add(HistoryGraphFragment(HistoryGraph.HUMIDITY))
+        }
+        come_temperature_inside_history.setOnClickListener {
+            (activity as? MainActivity)?.add(HistoryGraphFragment(HistoryGraph.TEMPERATURE_INSIDE))
+        }
+        come_temperature_outside_history.setOnClickListener {
+            (activity as? MainActivity)?.add(HistoryGraphFragment(HistoryGraph.TEMPERATURE_OUTSIDE))
+        }
+        come_power_history.setOnClickListener {
+            (activity as? MainActivity)?.add(HistoryGraphFragment(HistoryGraph.POWER))
+        }
+        come_pressure_history.setOnClickListener {
+            (activity as? MainActivity)?.add(HistoryGraphFragment(HistoryGraph.PRESSURE))
+        }
+        come_lock_history.setOnClickListener {
+            (activity as? MainActivity)?.add(LockHistoryFragment())
+        }
     }
 }

@@ -14,6 +14,10 @@ import com.example.myapplication.R
 import com.example.myapplication.data.ChangeRange
 import com.example.myapplication.data.HumidityState
 import kotlinx.android.synthetic.main.fragment_humidity.*
+import kotlinx.android.synthetic.main.fragment_humidity.auto
+import kotlinx.android.synthetic.main.fragment_humidity.main
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 class HumidityFragment:Fragment() {
@@ -54,7 +58,13 @@ class HumidityFragment:Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        update()
+        viewLifecycleOwner.lifecycleScope
+            .launch {
+                while (isActive){
+                    update()
+                    delay(5000)
+                }
+            }
         on_off.setOnClickListener {
             try {
                 lifecycleScope.launch {
@@ -65,15 +75,11 @@ class HumidityFragment:Fragment() {
                 }
             }catch (e:Exception){}
         }
-        auto.setOnClickListener {
-            try {
-                lifecycleScope.launch {
-                    WebClient.setHumidityState(
-                        HumidityState(!mode, humidity, minLevel, maxLevel, 0)
-                    )
-                    update()
-                }
-            }catch (e:Exception){}
+        auto.setOnCheckedChangeListener { compoundButton, b ->
+            on_off.isEnabled = !b
+            lifecycleScope.launch { WebClient.setHumidityState(
+                HumidityState(mode = b, state = humidity, top = maxLevel, low = minLevel, value = 0)
+            ) }
         }
         main.setOnClickListener {
             (activity as? MainActivity)?.add(RangeFragment(ChangeRange.HUMIDITY))

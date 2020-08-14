@@ -15,6 +15,8 @@ import com.example.myapplication.R
 import com.example.myapplication.data.ChangeRange
 import com.example.myapplication.data.LightState
 import kotlinx.android.synthetic.main.fragment_light.*
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 
 class LightFragment : Fragment() {
@@ -54,7 +56,13 @@ class LightFragment : Fragment() {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        update()
+        viewLifecycleOwner.lifecycleScope
+            .launch {
+                while (isActive){
+                    update()
+                    delay(5000)
+                }
+            }
         on_off.setOnClickListener {
             Log.v("CHECK_LISTENER", "begin")
             try {
