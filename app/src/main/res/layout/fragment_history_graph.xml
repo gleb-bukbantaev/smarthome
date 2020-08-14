@@ -1,4 +1,5 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageButton
@@ -16,7 +17,8 @@
         android:paddingTop="1dp"
         android:paddingRight="1dp"
         android:paddingBottom="1dp"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        tools:ignore="MissingClass">
 
     </com.jjoe64.graphview.GraphView>
 </FrameLayout>
