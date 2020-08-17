@@ -23,25 +23,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="20dp"
-            android:background="@android:color/transparent"
             android:text="Humidity History"/>
         <Button
             android:id="@+id/come_temperature_inside_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="20dp"
-            android:background="@android:color/transparent"
             android:text="Temperature Inside History"/>
         <Button
             android:id="@+id/come_temperature_outside_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="20dp"
-
-            android:background="@android:color/transparent"
             android:text="Temperature Outside History"/>
 
         <Button
@@ -49,36 +42,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="20dp"
-
-            android:background="@android:color/transparent"
             android:text="Power History"/>
         <Button
             android:id="@+id/come_pressure_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="20dp"
-
-            android:background="@android:color/transparent"
             android:text="Pressure History"/>
-        <Button
-            android:id="@+id/come_co2_history"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:padding="20dp"
-
-            android:background="@android:color/transparent"
-            android:text="CO2 History"/>
         <Button
             android:id="@+id/come_lock_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:padding="20dp"
-
-            android:background="@android:color/transparent"
             android:text="Exist History"/>
     </LinearLayout>
 </FrameLayout>
