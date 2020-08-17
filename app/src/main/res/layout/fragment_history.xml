@@ -46,6 +46,12 @@
             android:layout_gravity="center"
             android:text="Pressure History"/>
         <Button
+            android:id="@+id/come_co2_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="CO2 History"/>
+        <Button
             android:id="@+id/come_lock_history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

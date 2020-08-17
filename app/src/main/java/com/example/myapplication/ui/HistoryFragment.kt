@@ -9,6 +9,7 @@ import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.HistoryGraph
 import kotlinx.android.synthetic.main.fragment_history.*
+import kotlinx.android.synthetic.main.fragment_history.back
 
 class HistoryFragment:Fragment() {
     override fun onCreateView(
@@ -38,8 +39,14 @@ class HistoryFragment:Fragment() {
         come_pressure_history.setOnClickListener {
             (activity as? MainActivity)?.add(HistoryGraphFragment(HistoryGraph.PRESSURE))
         }
+        come_co2_history.setOnClickListener {
+            (activity as? MainActivity)?.add(HistoryGraphFragment(HistoryGraph.CO2))
+        }
         come_lock_history.setOnClickListener {
             (activity as? MainActivity)?.add(LockHistoryFragment())
+        }
+        back.setOnClickListener {
+            (activity as? MainActivity)?.back()
         }
     }
 }

@@ -5,5 +5,6 @@ enum class HistoryGraph {
     TEMPERATURE_INSIDE,
     TEMPERATURE_OUTSIDE,
     POWER,
-    PRESSURE
+    PRESSURE,
+    CO2
 }

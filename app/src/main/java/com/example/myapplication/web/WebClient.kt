@@ -24,7 +24,8 @@ object WebClient {
 
     val api = Retrofit.Builder()
         .client(okhttp)
-        .baseUrl("https://ms.newtonbox.ru/smarthome3/")
+        // .baseUrl("http://192.168.0.150/") Для локального сервера
+        .baseUrl("https://ms.newtonbox.ru/smarthome3/") // Для удалённого сервера
         .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
         .create(ApiService::class.java)
@@ -89,11 +90,41 @@ object WebClient {
         }
     }
 
-    suspend fun getHistory(): History {
+    suspend fun getHumidityHistory(): History {
         return withContext(Dispatchers.IO) {
-            api.getHistory()
+            api.getHumidityHistory()
         }
     }
+
+    suspend fun getTemperatureInsideHistory(): History {
+        return withContext(Dispatchers.IO) {
+            api.getTemperatureInsideHistory()
+        }
+    }
+
+    suspend fun getTemperatureOutsideHistory(): History {
+        return withContext(Dispatchers.IO) {
+            api.getTemperatureOutsideHistory()
+        }
+    }
+
+    suspend fun getPowerHistory(): History {
+        return withContext(Dispatchers.IO) {
+            api.getPowerHistory()
+        }
+    }
+
+    suspend fun getPressureHistory(): History {
+        return withContext(Dispatchers.IO) {
+            api.getPressureHistory()
+        }
+    }
+    suspend fun getCo2History(): History {
+        return withContext(Dispatchers.IO) {
+            api.getCo2History()
+        }
+    }
+
     suspend fun setToken(state: TokenRequest) {
         return withContext(Dispatchers.IO) {
             api.setToken(state)
