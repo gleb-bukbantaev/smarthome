@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.myapplication.MainActivity
 import com.example.myapplication.R
 import com.example.myapplication.data.LockHistoryItem
 import kotlinx.android.extensions.LayoutContainer
@@ -32,6 +33,9 @@ class LockHistoryFragment: Fragment() {
         lifecycleScope.launch{
             val history = WebClient.getLockHistory()
             adapter.setNewList(history.history.toList())
+        }
+        back.setOnClickListener {
+            (activity as? MainActivity)?.back()
         }
     }
     class Adapter(): RecyclerView.Adapter<Adapter.ViewHolder>() {

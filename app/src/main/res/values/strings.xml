@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">SmartHome</string>
     <string name="lock">Замок</string>
     <string name="togglebutton">ToggleButton</string>
 </resources>

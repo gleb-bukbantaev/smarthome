@@ -27,7 +27,7 @@ class HistoryGraphFragment(val type: HistoryGraph) : Fragment() {
 
         fun dataPointMaker(graphY:Array<Int>):Array<DataPoint>{
             val graph = Array(graphY.size) {DataPoint(0.0, 0.0)}
-            for (counter in 0 until graphY.size){
+            for (counter in graphY.indices){
                 graph[counter] = DataPoint(counter.toDouble(), graphY[counter].toDouble())
             }
             return graph
@@ -36,37 +36,44 @@ class HistoryGraphFragment(val type: HistoryGraph) : Fragment() {
             HistoryGraph.HUMIDITY ->
                 lifecycleScope.launch {
                     val graphY = Array(72) {0}
-                    val state = WebClient.getHistory()
-                    for (counter in 0..71) graphY[counter] = state.history[counter].humidityValue
+                    val state = WebClient.getHumidityHistory()
+                    for (counter in graphY.indices) graphY[counter] = state.history[counter].data
                     graphLayout.addSeries(LineGraphSeries(dataPointMaker(graphY)))
                 }
 
             HistoryGraph.TEMPERATURE_INSIDE ->
                 lifecycleScope.launch {
                     val graphY = Array(72) {0}
-                    val state = WebClient.getHistory()
-                    for (counter in 0..71) graphY[counter] = state.history[counter].temperatureInsideValue
+                    val state = WebClient.getTemperatureInsideHistory()
+                    for (counter in graphY.indices) graphY[counter] = state.history[counter].data
                     graphLayout.addSeries(LineGraphSeries(dataPointMaker(graphY)))
                 }
             HistoryGraph.TEMPERATURE_OUTSIDE ->
                 lifecycleScope.launch {
                     val graphY = Array(72) {0}
-                    val state = WebClient.getHistory()
-                    for (counter in 0..71) graphY[counter] = state.history[counter].temperatureOutsideValue
+                    val state = WebClient.getTemperatureOutsideHistory()
+                    for (counter in graphY.indices) graphY[counter] = state.history[counter].data
                     graphLayout.addSeries(LineGraphSeries(dataPointMaker(graphY)))
                 }
             HistoryGraph.POWER ->
                 lifecycleScope.launch {
                     val graphY = Array(72) {0}
-                    val state = WebClient.getHistory()
-                    for (counter in 0..71) graphY[counter] = state.history[counter].powerValue
+                    val state = WebClient.getPowerHistory()
+                    for (counter in graphY.indices) graphY[counter] = state.history[counter].data
                     graphLayout.addSeries(LineGraphSeries(dataPointMaker(graphY)))
                 }
             HistoryGraph.PRESSURE ->
                 lifecycleScope.launch {
                     val graphY = Array(72) {0}
-                    val state = WebClient.getHistory()
-                    for (counter in 0..71) graphY[counter] = state.history[counter].pressureValue
+                    val state = WebClient.getPressureHistory()
+                    for (counter in graphY.indices) graphY[counter] = state.history[counter].data
+                    graphLayout.addSeries(LineGraphSeries(dataPointMaker(graphY)))
+                }
+            HistoryGraph.CO2 ->
+                lifecycleScope.launch {
+                    val graphY = Array(72) {0}
+                    val state = WebClient.getCo2History()
+                    for (counter in graphY.indices) graphY[counter] = state.history[counter].data
                     graphLayout.addSeries(LineGraphSeries(dataPointMaker(graphY)))
                 }
         }
@@ -77,10 +84,7 @@ class HistoryGraphFragment(val type: HistoryGraph) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         back.setOnClickListener {
-            (activity as? MainActivity)?.back()
-        }
+            (activity as? MainActivity)?.back() }
     }
 
 }
-
-

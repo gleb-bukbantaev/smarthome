@@ -5,20 +5,22 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:background="@drawable/back3"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/back_for_button_in_history1"
             android:src="@drawable/ic_back_arrow" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="History"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:text="History" />
     </FrameLayout>
 
     <com.jjoe64.graphview.GraphView xmlns:android="http://schemas.android.com/apk/res/android"

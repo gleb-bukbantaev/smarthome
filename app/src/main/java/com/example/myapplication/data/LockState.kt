@@ -1,7 +1,7 @@
 package com.example.myapplication.data
 
-class LockState (
-    val state : Boolean
+class LockState(
+    val state: Boolean
 ) {
 
 }

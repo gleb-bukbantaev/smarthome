@@ -23,12 +23,9 @@ class LockFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_lock, container, false)
-        val refresh = view.findViewById<SwipeRefreshLayout>(R.id.refresh)
 
-        refresh.setOnRefreshListener {
-            update()
-            refresh.isRefreshing = false
-        }
+
+
         return view
     }
 

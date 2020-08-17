@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/back4">
 
     <ImageButton
         android:id="@+id/back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/back_for_button_in_history1"
         android:src="@drawable/ic_back_arrow" />
 
     <LinearLayout
@@ -37,6 +39,7 @@
                 android:id="@+id/main"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
+                android:background="@android:color/transparent"
                 android:text="%" />
 
             <ToggleButton

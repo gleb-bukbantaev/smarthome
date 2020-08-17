@@ -1,109 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<FrameLayout
-
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/back1"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:gravity="center"
+    android:id="@+id/ll">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System in Your Home"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            />
+
+
+        <TextView
+            android:layout_marginLeft="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:text="6 items"
+
+            />
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
+        <Button
+            android:layout_marginLeft="27dp"
             android:id="@+id/pressure"
-            android:layout_width="0dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="left"
+            android:background="@android:color/transparent"
             android:text="pressure" />
 
 
-        <TextView
+        <Button
+            android:layout_marginLeft="17dp"
             android:id="@+id/temperatureOutside"
-            android:layout_width="0dp"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right"
+            android:background="@android:color/transparent"
             android:text="temperature outside" />
     </LinearLayout>
-
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:clipToPadding="false"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
 
 
-            <ImageButton
-                android:id="@+id/come_light"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-                android:src="@drawable/ic_outline_light_24" />
+                <ImageButton
+                    android:id="@+id/come_light"
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/back_for_button_in_fragment_menu"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_outline_light_24" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Light"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#190A0A"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Check your Light"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"/>
 
-            <ImageButton
-                android:id="@+id/come_humidity"
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_baseline_opacity_24"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
-                />
-        </LinearLayout>
+                <ImageButton
+                    android:id="@+id/come_humidity"
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/back_for_button_in_fragment_menu"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_baseline_opacity_24" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:text="Water Level"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#221220"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Check your Water Level"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/come_temperature"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_temperature_fragment" />
-
-            <ImageButton
-                android:id="@+id/come_lock"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_baseline_lock_24" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/come_history"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_baseline_menu__24" />
-        </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-</FrameLayout>
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/come_temperature"
+                    android:background="@drawable/back_for_button_in_fragment_menu"
+                    android:src="@drawable/ic_temperature_fragment"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Climate"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#1B1325"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Check your Climate"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="160dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:layout_width="160dp"
+                    android:layout_height="80dp"
+                    android:background="@drawable/back_for_button_in_fragment_menu"
+                    android:id="@+id/come_lock"
+                    android:src="@drawable/ic_baseline_lock_24"
+                    android:padding="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Access"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_margin="10dp"
+                    android:background="#000000" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="Check your Access"
+                    android:textColor="@android:color/darker_gray" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+
+            android:layout_width="340dp"
+            android:layout_height="190dp"
+            android:layout_margin="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageButton
+                    android:layout_width="340dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/ic_baseline_menu__24"
+                    android:background="@drawable/back_for_button_in_fragment_menu"
+                    android:id="@+id/come_history"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20sp"
+                    android:text="History"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#000000"
+                    android:layout_margin="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Check your history"
+                    android:padding="5dp"
+                    android:textColor="@android:color/darker_gray"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
 
+
+
+
+
+    </LinearLayout>
+</LinearLayout>
