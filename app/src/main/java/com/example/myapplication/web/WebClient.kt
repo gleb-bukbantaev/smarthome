@@ -55,12 +55,6 @@ object WebClient {
         }
     }
 
-    /*suspend fun getCameraState(): CameraState {
-        return withContext(Dispatchers.IO) {
-            api.getCameraState()
-        }
-    }*/
-
     suspend fun getLockState(): LockState {
         return withContext(Dispatchers.IO) {
             api.getLockState()
